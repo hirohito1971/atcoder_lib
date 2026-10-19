@@ -21,59 +21,59 @@
 
 ## 一覧と計算量
 
-### data_structures/
+### [data_structures/](data_structures/)
 | ファイル | 内容 | 計算量 | verify済み問題 |
 |---|---|---|---|
-| union_find.py | Union-Find (経路圧縮+size) | ならしO(α(N)) | (記入欄) |
-| segment_tree.py | セグ木 点更新/区間クエリ | 構築O(N), クエリO(logN) | |
-| lazy_segment_tree.py | 遅延セグ木 (レシピ表+完成品5種: 加算×和/min, 代入×min/和, アフィン×和) | クエリO(logN) | |
-| fenwick_tree.py | BIT + 転倒数 | クエリO(logN) | |
-| priority_queue_utils.py | heapq基本 + 削除可能ヒープ | O(logN) | |
+| [union_find.py](data_structures/union_find.py) | Union-Find (経路圧縮+size) | ならしO(α(N)) | (記入欄) |
+| [segment_tree.py](data_structures/segment_tree.py) | セグ木 点更新/区間クエリ | 構築O(N), クエリO(logN) | |
+| [lazy_segment_tree.py](data_structures/lazy_segment_tree.py) | 遅延セグ木 (レシピ表+完成品5種: 加算×和/min, 代入×min/和, アフィン×和) | クエリO(logN) | |
+| [fenwick_tree.py](data_structures/fenwick_tree.py) | BIT + 転倒数 | クエリO(logN) | |
+| [priority_queue_utils.py](data_structures/priority_queue_utils.py) | heapq基本 + 削除可能ヒープ | O(logN) | |
 
-### graph/
+### [graph/](graph/)
 | ファイル | 内容 | 計算量 | verify済み問題 |
 |---|---|---|---|
-| bfs_grid.py | BFS (グリッド/グラフ/多始点) | O(V+E) | |
-| bfs01.py | 0-1 BFS | O(V+E) | |
-| dijkstra.py | ダイクストラ (+経路復元) | O((V+E)logV) | |
-| warshall_floyd.py | 全点対最短路 | O(V^3), N≦400目安 | |
-| topological_sort.py | トポソ + DAG上DP | O(V+E) | |
-| lca_doubling.py | LCA・ダブリング | 前計算O(NlogN), クエリO(logN) | |
+| [bfs_grid.py](graph/bfs_grid.py) | BFS (グリッド/グラフ/多始点) | O(V+E) | |
+| [bfs01.py](graph/bfs01.py) | 0-1 BFS | O(V+E) | |
+| [dijkstra.py](graph/dijkstra.py) | ダイクストラ (+経路復元) | O((V+E)logV) | |
+| [warshall_floyd.py](graph/warshall_floyd.py) | 全点対最短路 | O(V^3), N≦400目安 | |
+| [topological_sort.py](graph/topological_sort.py) | トポソ + DAG上DP | O(V+E) | |
+| [lca_doubling.py](graph/lca_doubling.py) | LCA・ダブリング | 前計算O(NlogN), クエリO(logN) | |
 
-### math_utils/
+### [math_utils/](math_utils/)
 | ファイル | 内容 | 計算量 | verify済み問題 |
 |---|---|---|---|
-| mod_arithmetic.py | 逆元・nCr前計算・nPr・nHr | 前計算O(N), クエリO(1) | |
-| sieve.py | 篩・SPF高速素因数分解・約数列挙 | O(N loglogN) | |
-| gcd_lcm_ext.py | 拡張ユークリッド・一般逆元・CRT | O(log min(a,b)) | |
-| count_squares.py | 区間 [L, R] の平方数の個数 (isqrt) | O(1) | |
+| [mod_arithmetic.py](math_utils/mod_arithmetic.py) | 逆元・nCr前計算・nPr・nHr | 前計算O(N), クエリO(1) | |
+| [sieve.py](math_utils/sieve.py) | 篩・SPF高速素因数分解・約数列挙 | O(N loglogN) | |
+| [gcd_lcm_ext.py](math_utils/gcd_lcm_ext.py) | 拡張ユークリッド・一般逆元・CRT | O(log min(a,b)) | |
+| [count_squares.py](math_utils/count_squares.py) | 区間 [L, R] の平方数の個数 (isqrt) | O(1) | |
 
-### snippets/ (見返して手で書く練習用)
+### [snippets/](snippets/) (見返して手で書く練習用)
 | ファイル | 内容 |
 |---|---|
-| binary_search.py | bisectチートシート・めぐる式・実数二分探索 |
-| prefix_sum.py | 1D/2D累積和・いもす法 |
-| input_fast.py | 高速入出力・非再帰DFSの型 |
-| dp_patterns.py | ナップサック2種・LIS・部分和 |
-| bit_dp.py | bitDP (TSP・マッチング数え上げ) |
-| coordinate_compression.py | 座標圧縮 (BITとセットで使う) |
-| run_length.py | ランレングス圧縮・文字列イディオム |
-| sorted_prefix_query.py | ソート＋累積和＋bisect で「各値との差の絶対値の総和」などを O(log N) |
-| enumerate_dfs.py | 辞書順列挙 DFS (副作用だけの再帰の型) |
-| stdlib_recipes.py | Python 標準ライブラリのレシピ集 (accumulate, bisect, heapq など) |
+| [binary_search.py](snippets/binary_search.py) | bisectチートシート・めぐる式・実数二分探索 |
+| [prefix_sum.py](snippets/prefix_sum.py) | 1D/2D累積和・いもす法 |
+| [input_fast.py](snippets/input_fast.py) | 高速入出力・非再帰DFSの型 |
+| [dp_patterns.py](snippets/dp_patterns.py) | ナップサック2種・LIS・部分和 |
+| [bit_dp.py](snippets/bit_dp.py) | bitDP (TSP・マッチング数え上げ) |
+| [coordinate_compression.py](snippets/coordinate_compression.py) | 座標圧縮 (BITとセットで使う) |
+| [run_length.py](snippets/run_length.py) | ランレングス圧縮・文字列イディオム |
+| [sorted_prefix_query.py](snippets/sorted_prefix_query.py) | ソート＋累積和＋bisect で「各値との差の絶対値の総和」などを O(log N) |
+| [enumerate_dfs.py](snippets/enumerate_dfs.py) | 辞書順列挙 DFS (副作用だけの再帰の型) |
+| [stdlib_recipes.py](snippets/stdlib_recipes.py) | Python 標準ライブラリのレシピ集 (accumulate, bisect, heapq など) |
 
-### strings/
+### [strings/](strings/)
 | ファイル | 内容 | 計算量 | verify済み問題 |
 |---|---|---|---|
-| rolling_hash.py | ローリングハッシュ (mod 2^61-1, 連結対応) | 構築O(N), クエリO(1) | |
+| [rolling_hash.py](strings/rolling_hash.py) | ローリングハッシュ (mod 2^61-1, 連結対応) | 構築O(N), クエリO(1) | |
 
 ### ルート直下
 | ファイル | 内容 |
 |---|---|
-| template.py | コンテスト開始時にコピーする雛形 |
-| Atcoder_io.py | 入力形式カタログ (stdin.buffer.read().split() 統一方式) |
-| frontier_propagation.py | フロンティア伝播 (直前に変化したマスの隣接だけを調べる) |
-| interval_index.py | 区間マージ＋二分探索による高速メンバーシップ判定 |
+| [template.py](template.py) | コンテスト開始時にコピーする雛形 |
+| [Atcoder_io.py](Atcoder_io.py) | 入力形式カタログ (stdin.buffer.read().split() 統一方式) |
+| [frontier_propagation.py](frontier_propagation.py) | フロンティア伝播 (直前に変化したマスの隣接だけを調べる) |
+| [interval_index.py](interval_index.py) | 区間マージ＋二分探索による高速メンバーシップ判定 |
 
 ---
 
