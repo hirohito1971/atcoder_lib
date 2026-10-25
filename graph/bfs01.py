@@ -16,9 +16,17 @@
 #     重み1の辺 → append     (キューの末尾に入れる)
 #   すると deque の中は常に「距離の昇順」が保たれるので、
 #   ヒープなしでダイクストラと同じ正しさが得られる。
+#
+# ★注意: dist は「短くなったら書き換える」。積んだ時点で確定させない!
+#   普通のBFSと違い、先に重み1で見つけた頂点に、後から重み0で
+#   もっと短く辿り着くことがある。(ABC481-D で WA)
+#   反例: 1→2, 1→3, 2→3 で S=1, T=3 (2が1の最小の行き先、3が2の最小の行き先)
+#         正解 0。積んだときに確定させると 1 になる。
 # =====================================================
 
 from collections import deque
+
+INF = 10**18
 
 
 def bfs01(n, graph, start):
@@ -28,7 +36,6 @@ def bfs01(n, graph, start):
     start : 始点
     戻り値: dist[v] = 最短距離 (到達不能は INF)
     """
-    INF = float("inf")
     dist = [INF] * n
     dist[start] = 0
     dq = deque([start])
@@ -40,9 +47,9 @@ def bfs01(n, graph, start):
             if nd < dist[v]:
                 dist[v] = nd
                 if w == 0:
-                    dq.appendleft(v)   # コスト0 → 先頭へ (優先)
+                    dq.appendleft(v)  # コスト0 → 先頭へ (優先)
                 else:
-                    dq.append(v)       # コスト1 → 末尾へ
+                    dq.append(v)  # コスト1 → 末尾へ
     return dist
 
 
@@ -52,7 +59,7 @@ def bfs01(n, graph, start):
 # =====================================================
 def bfs01_grid(grid, sy, sx):
     H, W = len(grid), len(grid[0])
-    INF = float("inf")
+
     dist = [[INF] * W for _ in range(H)]
     dist[sy][sx] = 0
     dq = deque([(sy, sx)])
@@ -72,21 +79,3 @@ def bfs01_grid(grid, sy, sx):
                 else:
                     dq.append((ny, nx))
     return dist
-
-
-# ---------------- 使用例 ----------------
-if __name__ == "__main__":
-    grid = [
-        ".#.",
-        ".#.",
-        "...",
-    ]
-    d = bfs01_grid(grid, 0, 0)
-    print(d[0][2])   # 右上へ: 壁を迂回できるので 0
-    grid2 = [
-        ".#.",
-        "###",
-        ".#.",
-    ]
-    d2 = bfs01_grid(grid2, 0, 0)
-    print(d2[2][2])  # 壁を最低2枚壊す必要 → 2
